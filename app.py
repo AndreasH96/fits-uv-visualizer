@@ -12,8 +12,6 @@ import os
 tkroot = tk.Tk()
 tkroot.withdraw()
 
-hover_over_uv_selection = False
-
 selected_uv_points = {'x':[],'y':[]}
 
 default_path = './data/input_image_0.fits'
@@ -33,7 +31,6 @@ def update_data_state():
 def load_fits_file(path):
     # Open the FITS file
     global image_data
-    #hdu_list = fits.open('./data/M87_EHT_2018_3644_b3.fits')
     try:
         hdu_list = fits.open(path)
     except:
@@ -43,9 +40,7 @@ def load_fits_file(path):
 
     # Close the FITS file
     hdu_list.close()
-
-
-
+    
 
 def open_fits_selection_window(event):
     global fits_data
@@ -70,8 +65,6 @@ def render_image_data():
     fits_plot.set_xlabel('X Pixel')
     fits_plot.set_ylabel('Y Pixel')
     fits_plot.figure.canvas.draw_idle()
-
-
 
 
 
@@ -125,10 +118,10 @@ def onclick(event:MouseEvent):
             render_uv_selection_plot()
             
 
-
 fig = plt.figure(figsize=(15,10))
 fig.canvas.manager.set_window_title('FITS UV selection reconstruction')
-gs = gridspec.GridSpec(4, 4, height_ratios=[2,1,1, 1])  # 2 rows, 2 columns
+
+gs = gridspec.GridSpec(4, 4, height_ratios=[2,1,1, 1]) 
 uv_selection_plot: Axes= plt.subplot(gs[:2, 1:3]) 
 fits_plot: Axes= plt.subplot(gs[2:,:2 ]) 
 result_plot: Axes= plt.subplot(gs[2:, 2:]) 
@@ -143,23 +136,13 @@ select_fits_button.on_clicked(open_fits_selection_window)
 clear_uv_button = Button(clear_selection_button_axes, 'Clear selection',color="gray")
 clear_uv_button.on_clicked(clear_uv_selection)
 
-
+fig.subplots_adjust(wspace=0.3,hspace=.4)  
+cid = uv_selection_plot.figure.canvas.mpl_connect('button_press_event', onclick)
 
 load_fits_file(default_path)
 update_data_state()
 
-
-print(f"U range: {freq_x.min()} to {freq_x.max()}")
-print(f"V range: {freq_y.min()} to {freq_y.max()}")
-
-
-fig.subplots_adjust(wspace=0.3,hspace=.4)  # Adjust horizontal & vertical space
-
 render_image_data()
 render_uv_selection_plot()
     
-
-cid = uv_selection_plot.figure.canvas.mpl_connect('button_press_event', onclick)
-
-
 plt.show()

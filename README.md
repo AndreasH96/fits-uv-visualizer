@@ -11,3 +11,17 @@ Allows you to load a fits file, select UV points and see how the UV coverage aff
 
 In the example with multiple points selected, we can see that the actual image (point source, nothing fancy) can be somewhat seen from the reconstruction.
 
+
+## Example: Placements of UV points (M87)
+### 1000 randomly placed points:
+
+![m87_rand_spread](./imgs/m87_spread_out.png)
+
+### 1000 randomly placed points, with a maximum UV distance of 0.05 (to focus on capturing general aspects):
+
+![m87_rand_centered](./imgs/m87_centered.png)
+
+# Todo:
+- [ ] Generate N random UV points with min and max UV distance
+- [ ] Load file of UV points
+- [ ] Drag to select box of UV range
