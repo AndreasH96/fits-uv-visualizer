@@ -2,7 +2,7 @@
 import matplotlib.pyplot as plt
 from matplotlib.axes import Axes
 from matplotlib.backend_bases import MouseEvent
-from matplotlib.widgets import Button
+from matplotlib.widgets import Button,TextBox
 import matplotlib.gridspec as gridspec
 import numpy as np
 from astropy.io import fits
@@ -144,5 +144,5 @@ update_data_state()
 
 render_image_data()
 render_uv_selection_plot()
-    
+
 plt.show()
