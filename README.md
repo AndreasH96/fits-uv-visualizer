@@ -23,5 +23,6 @@ In the example with multiple points selected, we can see that the actual image (
 
 # Todo:
 - [ ] Generate N random UV points with min and max UV distance
+- [ ] Phase shifting ?
 - [ ] Load file of UV points
 - [ ] Drag to select box of UV range
