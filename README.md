@@ -45,3 +45,11 @@ In the example with multiple points selected, we can see that the actual image (
 - [ ] Phase shifting ?
 - [ ] Load file of UV points
 - [ ] Evaluate UV ranges, should allow other than the fixed -0.5 - 0.5?
+
+- [ ] **BIG: Scientific mode**, covers the below points
+- [ ] Use the clicking to define the initial uv points at time 0, then simulate how they move during a observation simulation. 
+- [ ] Load orbital parameters and source parameters
+
+
+**Refactoring**
+- [ ] Separate rendering and computations
