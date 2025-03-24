@@ -87,6 +87,9 @@ class View():
                 else:
                     self.current_uv_data['u'].append(event.xdata)
                     self.current_uv_data['v'].append(event.ydata)
+                    self.current_uv_data['u'].append(event.xdata * -1)
+                    self.current_uv_data['v'].append(event.ydata * -1)
+                    
                 self.render_uv_selection_plot()
                 self.render_result_plot()
 
