@@ -1,0 +1,18 @@
+[project]
+name = "fits-uv-visualizer"
+version = "0.1.0"
+description = "Interactive FITS file UV coverage visualizer for radio astronomy education"
+requires-python = ">=3.10"
+dependencies = [
+    "matplotlib>=3.7",
+    "astropy>=5.3",
+    "numpy>=1.24",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

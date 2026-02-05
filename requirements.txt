@@ -1,3 +1,3 @@
-matplotlib
-astropy
-numpy
+matplotlib>=3.7
+astropy>=5.3
+numpy>=1.24
