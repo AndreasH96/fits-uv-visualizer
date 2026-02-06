@@ -7,9 +7,9 @@ Allows you to load a fits file, select UV points and see how the UV coverage aff
 ![single_img](./imgs/generate_N_points.gif)
 
 ## How to run
-1. Clone the repository 
+1. Clone the repository
 ~~~~
-git clone https://github.com/AndreasH96/fits-uv-visualizer.git 
+git clone https://github.com/AndreasH96/fits-uv-visualizer.git
 cd ./fits-uv-visualizer
 ~~~~
 2. Install requirements
@@ -20,6 +20,12 @@ pip install -r requirements.txt
 3. Run the application
 ~~~~
 python app.py
+~~~~
+
+## Running tests
+~~~~
+pip install pytest
+python -m pytest tests/ -v
 ~~~~
 
 ## Example: Single point selected
@@ -52,4 +58,4 @@ In the example with multiple points selected, we can see that the actual image (
 
 
 **Refactoring**
-- [ ] Separate rendering and computations
+- [x] Separate rendering and computations
